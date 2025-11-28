@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Courtology – Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Courtology – Tennis-inspired premium apparel. Winter Courtwear Collection coming soon." />
+
+  <!-- (İstersen Google Font değiştirirsin) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #f5f7ff 0, #dbe4ff 35%, #0b1020 100%);
+      color: #f8fafc;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 55%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .card {
+      backdrop-filter: blur(16px);
+      background: rgba(7, 10, 20, 0.88);
+      border-radius: 24px;
+      padding: 32px 28px;
+      max-width: 480px;
+      width: 94%;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.65);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e2e8f0;
+      margin-bottom: 18px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+    }
+
+    .brand {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #a5b4fc;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #cbd5f5;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.5), transparent);
+      margin: 18px 0 16px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+
+    .email-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .email-row input {
+      flex: 1;
+      padding: 9px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.8);
+      color: #e5e7eb;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .email-row input::placeholder {
+      color: #64748b;
+    }
+
+    .email-row button {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      background: linear-gradient(135deg, #f97316, #facc15);
+      color: #0b1020;
+      white-space: nowrap;
+    }
+
+    .small-note {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 14px;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .social-links a {
+      color: #c7d2fe;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(129, 140, 248, 0.7);
+      padding-bottom: 1px;
+    }
+
+    .lang {
+      font-size: 11px;
+      color: #94a3b8;
+      text-align: right;
+      flex: 1;
+    }
+
+    .lang span {
+      opacity: 0.7;
+    }
+
+    .lang strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .email-row {
+        flex-direction: column;
+      }
+
+      .email-row button {
+        width: 100%;
+        text-align: center;
+      }
+
+      .socials {
+        align-items: flex-start;
+      }
+
+      .lang {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <main class="card">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      <span>Site is warming up the court</span>
+    </div>
+
+    <div class="brand">COURTOLOGY</div>
+
+    <h1>Winter Courtwear Collection<br />is almost here.</h1>
+
+    <p class="subtitle">
+      <span class="highlight">Tennis-inspired premium apparel</span> for players and fans
+      who live on and off the court.
+    </p>
+
+    <p class="subtitle" style="font-size: 12px; opacity: .9;">
+      <strong>TR:</strong> Tenis kortundan ilham alan premium giyim markası. Yeni koleksiyon
+      çok yakında burada yayında olacak.
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="section-title">Stay in the loop</p>
+
+    <!--
+      NOT: Form action kısmını kendi email tool’una göre değiştirmen gerekecek.
+      Geçici olarak # bırakıyorum.
+    -->
+    <form class="email-row" action="#" method="post">
+      <input type="email" name="email" placeholder="Enter your email to get launch access" required />
+      <button type="submit">Notify me</button>
+    </form>
+
+    <p class="small-note">
+      No spam. Just early access to drops, discounts, and launch updates.
+      <br />
+      <span style="font-size: 10px; opacity: .8;">TR: Spam yok, sadece lansman ve indirim haberleri.</span>
+    </p>
+
+    <div class="socials">
+      <div>
+        <p class="section-title">Follow the brand</p>
+        <div class="social-links">
+          <a href="https://instagram.com/courtology.store" target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+          <a href="https://x.com/courtologystore" target="_blank" rel="noopener noreferrer">
+            X (Twitter)
+          </a>
+        </div>
+      </div>
+
+      <div class="lang">
+        <div><span>Language: </span><strong>EN / TR</strong></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
